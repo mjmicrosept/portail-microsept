@@ -16,10 +16,10 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.14",
-        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-bootstrap4": "dev-master",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "almasaeed2010/adminlte": "~2.4",
-        "dmstr/yii2-adminlte-asset": "2.*",
+        "kmergen/yii2-widgets" : "dev-master",
+        "kmergen/yii2-coreui": "dev-master",
         "webvimark/module-user-management": "*",
         "kartik-v/yii2-grid": "*",
         "kartik-v/yii2-widget-activeform": "*",
@@ -45,7 +45,8 @@
         "devleaks/yii2-introjs": "*",
         "kartik-v/yii2-widget-depdrop": "dev-master",
         "yii2mod/yii2-ftp": "^1.0",
-        "bower-asset/chartjs": "^2.7.3"
+        "bower-asset/chartjs": "^2.7.3",
+        "rmrevin/yii2-fontawesome": "~3.2"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

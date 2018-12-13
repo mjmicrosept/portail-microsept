@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="form-inline pull-right">
                         <?= GridPageSize::widget([
                             'pjaxId'=>'user-grid-pjax',
-                            'viewFile' => '@app/views/widgets/grid-page-size/index.php',
+                            'viewFile' => '@app/views/widgets/grid-page-size/index_oldexample.php',
 							'text'=>Yii::t('microsept','Records per page')
                         ]) ?>
                         &nbsp;

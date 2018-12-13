@@ -20,7 +20,6 @@ use dmstr\widgets\Alert;
     </section>
 
     <section class="content" style="padding-top: 0;">
-        <?= Alert::widget() ?>
         <?= $content ?>
     </section>
 </div>

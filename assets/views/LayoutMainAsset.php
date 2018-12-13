@@ -17,22 +17,26 @@ class LayoutMainAsset extends AssetBundle
 
     public $sourcePath = '@app/assets/web';
     public $css = [
-        'css/site.css',
         'css/animate.min.css',
-        'css/all-skin.css',
         'css/loader.css',
         'css/404.css',
         'css/bootstrap-toggle.css',
+        'css/site.css',
+        'css/microsept.css',
     ];
+
     public $js = [
-        'js/layouts.main.js',
         'js/bootstrap-toggle.js',
+        'js/bootstrap.min.js',
+        'js/colors.js',
+        //'js/main.js',
+        //'js/popovers.js',
+        //'js/tooltips.js',
+        //'js/widgets.js',
+        'js/perfect-scrollbar.min.js',
+        'js/coreui.min.js'
     ];
     public $depends = [
-        'app\assets\AppAsset',
-        'app\assets\views\PluginMainAsset',
-        'app\assets\views\BowerComponentsAsset',
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+
     ];
 }

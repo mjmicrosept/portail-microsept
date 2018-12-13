@@ -7,32 +7,10 @@
  */
 
 use app\models\User;
-use app\models\PortailUsers;
-use app\models\Client;
-
-$clientLabel = 'Etablissements';
-$clientIcon = 'fa fa-building';
-if(Yii::$app->user->isSuperAdmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN])) {
-    $clientLabel = 'Clients';
-    $clientIcon = 'fa fa-users';
-}
-
-$visibleClient = false;
-if(Yii::$app->user->isSuperAdmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN])){
-    $visibleClient = true;
-}
-else{
-    if(User::getCurrentUser()->hasRole([User::TYPE_CLIENT_ADMIN])){
-        $idParent = PortailUsers::find()->andFilterWhere(['id_user'=>User::getCurrentUser()->id])->one()->id_client;
-        $aIdChild = Client::getChildList($idParent);
-        if(count($aIdChild) > 0)
-            $visibleClient = true;
-    }
-}
 
 
 return [
-    [
+    /*[
         'label' => '<a href="#"><i class="fa fa-user"></i>
                                     <span>Gestion des Utilisateurs</span>
                                 <i class="fa fa-angle-left pull-right"></i></a>',
@@ -124,5 +102,35 @@ return [
             ['label' => '<span class="fas fa-cloud-upload-alt"></span> Envoi des données', 'url' => ['/analyse-data/upload']],
             ['label' => '<span class="fas fa-chart-pie"></span> Statistiques', 'url' => ['/analyse-data/statistique'],'visible'=>Yii::$app->user->isSuperAdmin ? true : false],
         ],
+    ],*/
+    ['label' => 'THEME'],
+    [
+        'label' => 'Utilisateurs',
+        'url' => '#',
+        'icon' => 'fas fa-users nav-icon',
+        'items' => [
+            ['label' => 'Utilisateurs', 'icon' => 'fas fa-bullseye nav-margin-for-menu', 'url' => ['site/1']],
+            ['label' => 'Rôles', 'icon' => 'fas fa-bullseye nav-margin-for-menu', 'url' => ['site/2']],
+            ['label' => 'Permissions', 'icon' => 'fas fa-bullseye nav-margin-for-menu', 'url' => ['site/3']],
+            ['label' => 'Grps de permission', 'icon' => 'fas fa-bullseye nav-margin-for-menu', 'url' => ['site/4']],
+            ['label' => 'Journal des visites', 'icon' => 'fas fa-bullseye nav-margin-for-menu', 'url' => ['site/5']],
+        ],
     ],
+    ['label' => 'Clients', 'icon' => 'far fa-address-book nav-icon', 'url' => ['site/6']],
+    ['label' => 'Prospects', 'icon' => 'far fa-address-card nav-icon', 'url' => ['site/7']],
+    [
+        'label' => 'Suivi commercial',
+        'icon' => 'fas fa-briefcase nav-icon',
+        'url' => '#',
+        'items' => [
+            ['label' => 'Chiffre d\'affaire', 'icon' => 'fas fa-funnel-dollar nav-margin-for-menu', 'url' => ['site/8']],
+            ['label' => 'Projets', 'icon' => 'far fa-lightbulb nav-margin-for-menu', 'url' => ['site/9']],
+            ['label' => 'Synthèses', 'icon' => 'fas fa-chart-pie nav-margin-for-menu', 'url' => ['site/10']],
+            ['label' => 'Archives', 'icon' => 'fas fa-archive nav-margin-for-menu', 'url' => ['site/11']],
+        ]
+    ],
+    ['label' => 'Dashboard', 'icon' => 'fas fa-tachometer-alt nav-icon', 'url' => ['site/dashboard']],
 ];
+/*$result = [];
+array_push($result,['label' => 'THEME']);
+return $result;*/

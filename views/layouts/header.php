@@ -27,35 +27,14 @@ use yii\helpers\Html;
                         'options' => ['class'=>'nav navbar-nav'],
                         'items' => [
                             ['label'=>'<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                '.
-                                \cebe\gravatar\Gravatar::widget(
-                                    [
-                                        'email' => is_null(Yii::$app->user->identity->email) ? '' : Yii::$app->user->identity->email,
-                                        'options' => [
-                                            'alt' => Yii::$app->user->username,
-                                            'class' => 'user-image'
-                                        ],
-                                        'size' => 25
-                                    ]
-                                )
-                                .'
+                                '.'
                                 <span class="hidden-xs">'.Yii::$app->user->username.'</span>
                             </a>',
                                 'options'=>['class'=>'dropdown user user-menu'],
                                 'submenuTemplate' => '<ul class="dropdown-menu" style="width:300px;">{items}</ul>',
                                 'items'=> [
                                     ['label'=>
-                                        \cebe\gravatar\Gravatar::widget(
-                                            [
-                                                'email' => is_null(Yii::$app->user->identity->email) ? '' : Yii::$app->user->identity->email,
-                                                'options' => [
-                                                    'alt' => Yii::$app->user->username,
-                                                    'class' => 'img-circle'
-                                                ],
-                                                'size' => 90
-                                            ]
-                                        )
-                                        .'
+                                        '.
                             <p>
                                 '.Yii::$app->user->username.'
                                 <small>'.Yii::$app->user->identity->email.'</small>
