@@ -23,7 +23,7 @@ class Sidebar extends \yii\widgets\Menu
      * @inheritdoc
      */
     public $itemOptions = ['class' => 'nav-item'];
-    public $linkTemplate = '<a class="nav-link" href="{url}">{icon} {label}</a>';
+    public $linkTemplate = '<a class="nav-link" href="{url}">{icon} {label} {badge}</a>';
     public $submenuTemplate = "
                     <ul class=\"nav-dropdown-items\">\n{items}\n</ul>";
     public $activateParents = true;
@@ -38,7 +38,7 @@ class Sidebar extends \yii\widgets\Menu
                     <a class="nav-link nav-dropdown-toggle" href="{url}">{label}</a>';
             $linkTemplate = '
                 <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="{url}">{icon} {label}</a>';
+                    <a class="nav-link nav-dropdown-toggle" href="{url}">{icon} {label} {badge}</a>';
         }
         else {
             $labelTemplate = $this->labelTemplate;
@@ -47,7 +47,7 @@ class Sidebar extends \yii\widgets\Menu
 
         if (isset($item['url'])) {
             $template = ArrayHelper::getValue($item, 'template', $linkTemplate);
-            $replace = !empty($item['icon']) ? [
+            /*$replace = !empty($item['icon']) ? [
                 '{url}' => Url::to($item['url']),
                 '{label}' => $item['label'],
                 '{icon}' => '<i class="' . $item['icon'] .(empty($item['class']) ? '' : ' '.$item['class']).'" aria-hidden="true"></i>'
@@ -55,7 +55,26 @@ class Sidebar extends \yii\widgets\Menu
                 '{url}' => Url::to($item['url']),
                 '{label}' => $item['label'],
                 '{icon}' => null,
-            ];
+            ];*/
+            $replace = [];
+            $replace +=['{url}'=> Url::to($item['url'])];
+            $replace += ['{label}'=> $item['label']];
+
+            if(!empty($item['icon']))
+                $replace += ['{icon}'=> '<i class="' . $item['icon'] .(empty($item['class']) ? '' : ' '.$item['class']).'" aria-hidden="true"></i>'];
+            else
+                $replace += ['{icon}'=> null];
+
+            if(!empty($item['badge'])){
+                $text = 'INFO';
+                if(!empty($item['info']))
+                    $text = $item['info'];
+                $replace += ['{badge}' => '<span class="'.$item['badge'].'">'.$text.'</span>'];
+            }
+            else{
+                $replace += ['{badge}' => null];
+            }
+
             return strtr($template, $replace);
         } else {
             $template = ArrayHelper::getValue($item, 'template', $labelTemplate);

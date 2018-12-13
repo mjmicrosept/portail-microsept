@@ -524,7 +524,7 @@
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar">
-                                                <img class="img-avatar" src="img/avatars/1.jpg" alt="admin@bootstrapmaster.com">
+                                                <img class="img-avatar" src="../../images/1.jpg" alt="admin@bootstrapmaster.com">
                                                 <span class="avatar-status badge-success"></span>
                                             </div>
                                         </td>
@@ -550,7 +550,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <i class="fa fa-cc-mastercard" style="font-size:24px"></i>
+                                            <i class="fab fa-cc-mastercard" style="font-size:24px"></i>
                                         </td>
                                         <td>
                                             <div class="small text-muted">Last login</div>
@@ -560,7 +560,7 @@
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar">
-                                                <img class="img-avatar" src="img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                                                <img class="img-avatar" src="../../images/2.jpg" alt="admin@bootstrapmaster.com">
                                                 <span class="avatar-status badge-danger"></span>
                                             </div>
                                         </td>
@@ -586,7 +586,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <i class="fa fa-cc-visa" style="font-size:24px"></i>
+                                            <i class="fab fa-cc-visa" style="font-size:24px"></i>
                                         </td>
                                         <td>
                                             <div class="small text-muted">Last login</div>
@@ -596,7 +596,7 @@
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar">
-                                                <img class="img-avatar" src="img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                                                <img class="img-avatar" src="../../images/3.jpg" alt="admin@bootstrapmaster.com">
                                                 <span class="avatar-status badge-warning"></span>
                                             </div>
                                         </td>
@@ -622,7 +622,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <i class="fa fa-cc-stripe" style="font-size:24px"></i>
+                                            <i class="fab fa-cc-stripe" style="font-size:24px"></i>
                                         </td>
                                         <td>
                                             <div class="small text-muted">Last login</div>
@@ -632,7 +632,7 @@
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar">
-                                                <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                                                <img class="img-avatar" src="../../images/4.jpg" alt="admin@bootstrapmaster.com">
                                                 <span class="avatar-status badge-secondary"></span>
                                             </div>
                                         </td>
@@ -658,7 +658,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <i class="fa fa-paypal" style="font-size:24px"></i>
+                                            <i class="fab fa-paypal" style="font-size:24px"></i>
                                         </td>
                                         <td>
                                             <div class="small text-muted">Last login</div>
@@ -668,7 +668,7 @@
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar">
-                                                <img class="img-avatar" src="img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                                                <img class="img-avatar" src="../../images/5.jpg" alt="admin@bootstrapmaster.com">
                                                 <span class="avatar-status badge-success"></span>
                                             </div>
                                         </td>
@@ -694,7 +694,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <i class="fa fa-google-wallet" style="font-size:24px"></i>
+                                            <i class="fab fa-google-wallet" style="font-size:24px"></i>
                                         </td>
                                         <td>
                                             <div class="small text-muted">Last login</div>
@@ -704,7 +704,7 @@
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar">
-                                                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                                                <img class="img-avatar" src="../../images/6.jpg" alt="admin@bootstrapmaster.com">
                                                 <span class="avatar-status badge-danger"></span>
                                             </div>
                                         </td>
@@ -730,7 +730,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <i class="fa fa-cc-amex" style="font-size:24px"></i>
+                                            <i class="fab fa-cc-amex" style="font-size:24px;"></i>
                                         </td>
                                         <td>
                                             <div class="small text-muted">Last login</div>

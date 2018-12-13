@@ -19,6 +19,7 @@ use app\assets\AppAsset;
 AppAsset::register($this);
 
 $user = User::getCurrentUser();
+$this->title = 'Portail Microsept';
 
 ?>
 <?php $this->beginPage() ?>
@@ -30,7 +31,7 @@ $user = User::getCurrentUser();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link rel="shortcut icon" href="<?= Url::to('@web/themes/coreui/img/favicon.png') ?>">
+    <link rel="shortcut icon" href="../../favicon.ico">
     <?php $this->head() ?>
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show<?= isset($this->params['bodyCssClass']) ? " {$this->params['bodyCssClass']}" : '' ?>">
