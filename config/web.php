@@ -95,7 +95,7 @@ $config = [
                 ],
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [
-                        YII_ENV_DEV ? 'css/bootstrap.css' : 'css/bootstrap.min.css',
+                        //YII_ENV_DEV ? 'css/bootstrap.css' : 'css/bootstrap.min.css',
                     ]
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
@@ -152,7 +152,9 @@ $config = [
             },
         ],
         'gridview' =>  [
-            'class' => '\kartik\grid\Module'
+            'class' => '\kartik\grid\Module',
+            'bsVersion' => '4.1.3',
+            'bsColCssPrefixes' => '4',
             // enter optional module parameters below - only if you need to
             // use your own export download action or custom translation
             // message source

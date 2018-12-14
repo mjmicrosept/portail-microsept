@@ -21,19 +21,19 @@ use yii\grid\GridView;
 $this->title = Yii::t('microsept', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index">
+<div class="user-index" style="margin:30px 10px;">
 
-	<div class="panel panel-primary">
-		<div class="panel-heading">
+	<div class="card" style="border:1px solid #acb5bd">
+		<div class="card-header bg-secondary" style="border-bottom:1px solid #acb5bd">
 			<div class="row">
 				<div class="col-sm-6">
                     <h4><?= $this->title ?></h4>
 				</div>
 				<div class="col-sm-6">
-                    <div class="form-inline pull-right">
+                    <div class="form-inline" style="float:right">
                         <?= GridPageSize::widget([
                             'pjaxId'=>'user-grid-pjax',
-                            'viewFile' => '@app/views/widgets/grid-page-size/index_oldexample.php',
+                            'viewFile' => '@app/views/widgets/grid-page-size/index.php',
 							'text'=>Yii::t('microsept','Records per page')
                         ]) ?>
                         &nbsp;
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			</div>
 		</div>
 
-		<div class="panel-body">
+		<div class="card-body">
 			<?php Pjax::begin([
 				'id'=>'user-grid-pjax',
 			]) ?>
@@ -55,6 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?= \kartik\grid\GridView::widget([
 				'id'=>'user-grid',
 				'dataProvider' => $dataProvider,
+				'bsVersion' => '4.1.3',
 				'pager'=>[
 					'options'=>['class'=>'pagination pagination-sm'],
 					'hideOnSinglePage'=>true,
@@ -65,6 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'layout'=>'{items}<div class="row"><div class="col-sm-8">{pager}</div><div class="col-sm-4 text-right">{summary}'.GridBulkActions::widget([
 						'gridId'=>'user-grid',
 						'promptText'=>Yii::t('microsept','Modif status'),
+						'wrapperClass' => 'form-inline float-right',
 						'actions'=>[
 							'-----',
 							Url::to(['bulk-activate', 'attribute'=>'status'])=>Yii::t('microsept', 'Activate'),
@@ -72,11 +74,19 @@ $this->params['breadcrumbs'][] = $this->title;
 						],
 					]).'</div></div>',
 				'columns' => [
-					['class' => 'yii\grid\SerialColumn', 'options'=>['style'=>'width:10px'] ],
-
 					[
 						'class'=>'webvimark\components\StatusColumn',
 						'attribute'=>'superadmin',
+						'format' => 'raw',
+						//'hAlign' => 'center',
+						'value' => function($model){
+			                if($model->superadmin){
+			                    return '<span class="badge badge-success" style="padding:5px 10px;"> Oui </span>';
+                            }
+                            else{
+                                return '<span class="badge badge-warning" style="padding:5px 10px;">Non</span>';
+                            }
+                        },
 						'visible'=>Yii::$app->user->isSuperadmin,
 					],
 
@@ -95,6 +105,16 @@ $this->params['breadcrumbs'][] = $this->title;
 					[
 						'class'=>'webvimark\components\StatusColumn',
 						'attribute'=>'email_confirmed',
+                        'format' => 'raw',
+                        //'hAlign' => 'center',
+                        'value' => function($model){
+                            if($model->email_confirmed){
+                                return '<span class="badge badge-success" style="padding:5px 10px;"> Oui </span>';
+                            }
+                            else{
+                                return '<span class="badge badge-warning" style="padding:5px 10px;">Non</span>';
+                            }
+                        },
 						'visible'=>User::hasPermission('viewUserEmail'),
 					],
 					[
@@ -130,10 +150,20 @@ $this->params['breadcrumbs'][] = $this->title;
 					[
 						'class'=>'webvimark\components\StatusColumn',
 						'attribute'=>'status',
-						'optionsArray'=>[
-							[User::STATUS_ACTIVE, Yii::t('microsept', 'Active'), 'success'],
-							[User::STATUS_INACTIVE, Yii::t('microsept', 'Inactive'), 'warning'],
-						],
+                        'format' => 'raw',
+                        //'hAlign' => 'center',
+                        'value' => function($model){
+                            if($model->status){
+                                return '<span class="badge badge-success" style="padding:5px 10px;"> Actif </span>';
+                            }
+                            else{
+                                return '<span class="badge badge-warning" style="padding:5px 10px;">Inactif</span>';
+                            }
+                        },
+						//'optionsArray'=>[
+						//	[User::STATUS_ACTIVE, Yii::t('microsept', 'Active'), 'success'],
+						//	[User::STATUS_INACTIVE, Yii::t('microsept', 'Inactive'), 'warning'],
+						//],
 					],
 					['class' => 'yii\grid\CheckboxColumn', 'options'=>['style'=>'width:10px'] ],
 //					[

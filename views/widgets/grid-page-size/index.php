@@ -9,7 +9,7 @@ use yii\helpers\Html;
 use yii\web\View;
 
 ?>
-<div class="btn-group">
+<div class="btn-group" style="display:none !important">
     <?php if ( $this->context->enableClearFilters ): ?>
 
         <span style="display: none" id="<?= ltrim($this->context->gridId, '#') ?>-clear-filters-btn" class="btn btn-sm btn-default">
@@ -18,7 +18,7 @@ use yii\web\View;
     <?php endif; ?>
 </div>
 &nbsp;
-<div class="btn-group">
+<div class="btn-group" style="display:block !important">
     <?= $this->context->text ?>
 
     <?= Html::dropDownList(

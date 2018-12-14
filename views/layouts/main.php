@@ -10,9 +10,9 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use kmergen\coreui\widgets\Alert;
+use app\widgets\Alert;
 use app\widgets\Sidebar;
-use kmergen\coreui\widgets\Breadcrumbs;
+use app\widgets\Breadcrumbs;
 use app\models\User;
 use app\assets\AppAsset;
 
@@ -31,7 +31,7 @@ $this->title = 'Portail Microsept';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="shortcut icon" href="/../../favicon.ico">
     <?php $this->head() ?>
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show<?= isset($this->params['bodyCssClass']) ? " {$this->params['bodyCssClass']}" : '' ?>">
@@ -39,8 +39,8 @@ $this->title = 'Portail Microsept';
 <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">☰</button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="../../images/microsept_encart.png" width="100" height="25" alt="CoreUI Logo">
-        <img class="navbar-brand-minimized" src="../../images/microsept_logo.png" width="30" height="30" alt="CoreUI Logo">
+        <img class="navbar-brand-full" src="/../../images/microsept_encart.png" width="100" height="25" alt="CoreUI Logo">
+        <img class="navbar-brand-minimized" src="/../../images/microsept_logo.png" width="30" height="30" alt="CoreUI Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
@@ -191,7 +191,7 @@ $this->title = 'Portail Microsept';
                     <div class="message">
                         <div class="py-3 mr-3 float-left">
                             <div class="avatar">
-                                <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                                 <span class="avatar-status badge-success"></span>
                             </div>
                         </div>
@@ -208,7 +208,7 @@ $this->title = 'Portail Microsept';
                     <div class="message">
                         <div class="py-3 mr-3 float-left">
                             <div class="avatar">
-                                <img class="img-avatar" src="../../images/6.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/6.jpg" alt="admin@bootstrapmaster.com">
                                 <span class="avatar-status badge-warning"></span>
                             </div>
                         </div>
@@ -224,7 +224,7 @@ $this->title = 'Portail Microsept';
                     <div class="message">
                         <div class="py-3 mr-3 float-left">
                             <div class="avatar">
-                                <img class="img-avatar" src="../../images/5.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/5.jpg" alt="admin@bootstrapmaster.com">
                                 <span class="avatar-status badge-danger"></span>
                             </div>
                         </div>
@@ -240,7 +240,7 @@ $this->title = 'Portail Microsept';
                     <div class="message">
                         <div class="py-3 mr-3 float-left">
                             <div class="avatar">
-                                <img class="img-avatar" src="../../images/4.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/4.jpg" alt="admin@bootstrapmaster.com">
                                 <span class="avatar-status badge-info"></span>
                             </div>
                         </div>
@@ -259,7 +259,7 @@ $this->title = 'Portail Microsept';
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <img class="img-avatar" src="../../images/6.jpg" alt="admin@bootstrapmaster.com">
+                <img class="img-avatar" src="/../../images/6.jpg" alt="admin@bootstrapmaster.com">
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">
@@ -299,8 +299,13 @@ $this->title = 'Portail Microsept';
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-shield"></i> Lock Account</a>
-                <a class="dropdown-item" href="../user-management/auth/logout">
-                    <i class="fa fa-lock"></i> Logout</a>
+
+                    <?php echo Html::a(
+                        '<i class="fa fa-power-off"></i> '. Yii::t("microsept","Deconnecter"),
+                        ['/user-management/auth/logout'],
+                        ['class' => 'dropdown-item']
+                    ) ?>
+
             </div>
         </li>
     </ul>
@@ -364,7 +369,7 @@ $this->title = 'Portail Microsept';
                     <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Today</div>
                     <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
                         <div class="avatar float-right">
-                            <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                         </div>
                         <div>Meeting with
                             <strong>Lucas</strong>
@@ -376,7 +381,7 @@ $this->title = 'Portail Microsept';
                     </div>
                     <div class="list-group-item list-group-item-accent-info">
                         <div class="avatar float-right">
-                            <img class="img-avatar" src="../../images/4.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/4.jpg" alt="admin@bootstrapmaster.com">
                         </div>
                         <div>Skype with
                             <strong>Megan</strong>
@@ -397,19 +402,19 @@ $this->title = 'Portail Microsept';
                             <i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
                         <div class="avatars-stack mt-2">
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/2.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/2.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/3.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/3.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/4.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/4.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/5.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/5.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/6.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/6.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                         </div>
                     </div>
@@ -431,25 +436,25 @@ $this->title = 'Portail Microsept';
                             <i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
                         <div class="avatars-stack mt-2">
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/2.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/2.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/3.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/3.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/4.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/4.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/5.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/5.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/6.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/6.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                             <div class="avatar avatar-xs">
-                                <img class="img-avatar" src="../../images/8.jpg" alt="admin@bootstrapmaster.com">
+                                <img class="img-avatar" src="/../../images/8.jpg" alt="admin@bootstrapmaster.com">
                             </div>
                         </div>
                     </div>
@@ -459,7 +464,7 @@ $this->title = 'Portail Microsept';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -474,7 +479,7 @@ $this->title = 'Portail Microsept';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -489,7 +494,7 @@ $this->title = 'Portail Microsept';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -504,7 +509,7 @@ $this->title = 'Portail Microsept';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -519,7 +524,7 @@ $this->title = 'Portail Microsept';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img class="img-avatar" src="../../images/7.jpg" alt="admin@bootstrapmaster.com">
+                            <img class="img-avatar" src="/../../images/7.jpg" alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>

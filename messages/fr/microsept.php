@@ -199,5 +199,6 @@ return [
     "LiaisonUpdateSuccess"=>"La liaison a été mise à jour avec succès",
     "LiaisonCreateError"=>"Une erreur s'est produite, veuillez contacter l'administrateur",
     "Upload_Doc_Data"=>"Envoi des données d'analyses",
-    "Historique"=>"Historique"
+    "Historique"=>"Historique",
+    "Home_Link" => "Accueil"
 ];

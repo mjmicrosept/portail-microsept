@@ -16,7 +16,6 @@ class m160408_074824_create_portail_users extends Migration
             'id' => $this->primaryKey(),
             'id_user' => $this->integer(11)->notNull(),
             'id_client' => $this->integer(11)->defaultValue(NULL),
-            'id_labo' => $this->integer(11)->defaultValue(NULL),
             'date_create' => $this->timestamp()->notNull()->defaultExpression('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
         ]);
 
