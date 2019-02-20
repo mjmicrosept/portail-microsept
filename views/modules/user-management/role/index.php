@@ -1,11 +1,8 @@
 <?php
 use webvimark\extensions\GridPageSize\GridPageSize;
 use webvimark\modules\UserManagement\components\GhostHtml;
-use webvimark\modules\UserManagement\models\rbacDB\AuthItemGroup;
 use webvimark\modules\UserManagement\models\rbacDB\Role;
-use webvimark\modules\UserManagement\UserManagementModule;
 use yii\grid\GridView;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 
@@ -17,16 +14,18 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('microsept', 'Roles');
 $this->params['breadcrumbs'][] = $this->title;
 
-?>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
+
+?>
+<div class="role-index" style="margin:30px 10px;">
+<div class="card" style="border:1px solid #acb5bd">
+    <div class="card-header bg-secondary" style="border-bottom:1px solid #acb5bd">
         <div class="row">
             <div class="col-sm-6">
                 <h4><?= $this->title ?></h4>
             </div>
             <div class="col-sm-6">
-                <div class="form-inline pull-right">
+                <div class="form-inline pull-right" style="float:right;">
                     <?= GridPageSize::widget([
                         'pjaxId'=>'role-grid-pjax',
                         'viewFile' => '@app/views/widgets/grid-page-size/index.php',
@@ -43,12 +42,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
-	<div class="panel-body">
+	<div class="card-body">
 		<?php Pjax::begin([
 			'id'=>'role-grid-pjax',
 		]) ?>
 
-		<?= GridView::widget([
+		<?= \kartik\grid\GridView::widget([
 			'id'=>'role-grid',
 			'dataProvider' => $dataProvider,
 			'pager'=>[
@@ -74,9 +73,31 @@ $this->params['breadcrumbs'][] = $this->title;
 					'class' => 'yii\grid\ActionColumn',
 					'contentOptions'=>['style'=>'width:70px; text-align:center;'],
 				],
+                ['class' => '\kartik\grid\ActionColumn',
+                    'template' => '{view} {update} {delete}',
+                    'noWrap' => true,
+                    'vAlign'=>'middle',
+                    'buttons' => [
+                        //update button
+                        'update' => function ($url,Role $model) {
+                            return Html::a('<span class="fa fa-pencil-alt"></span>', $url, [
+                                'title' => Yii::t('app','Update'),
+                                'data-method' => 'post',
+                            ]);
+                        },
+                        'delete' => function ($url, $model) {
+                            return Html::a('<span class="fa fa-trash-alt"></span>', $url, [
+                                'title' => Yii::t('app','Delete'),
+                                'data-method' => 'post',
+                                'data-confirm' => Yii::t('app', 'Delete user')
+                            ]);
+                        }
+                    ],
+                ],
 			],
 		]); ?>
 
 		<?php Pjax::end() ?>
 	</div>
+</div>
 </div>

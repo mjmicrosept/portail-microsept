@@ -1,7 +1,5 @@
 <?php
 
-use webvimark\modules\UserManagement\UserManagementModule;
-use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
@@ -13,14 +11,14 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('microsept', 'Permission gro
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->code]];
 $this->params['breadcrumbs'][] = Yii::t('microsept', 'Editing')
 ?>
-<div class="auth-item-group-update">
+<div class="auth-item-group-update" style="margin:30px 10px;">
 
-	<div class="panel panel-primary">
-		<div class="panel-heading">
+	<div class="card" style="border:1px solid #acb5bd">
+		<div class="card-header bg-secondary" style="border-bottom:1px solid #acb5bd">
 			<h4><?= $this->title ?></h4>
 		</div>
 
-		<div class="panel-body">
+		<div class="card-body">
 			<?= $this->render('_form', compact('model')) ?>
 		</div>
 	</div>

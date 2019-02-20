@@ -1,7 +1,5 @@
 <?php
 
-use webvimark\modules\UserManagement\UserManagementModule;
-use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /**
@@ -13,11 +11,11 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('microsept', 'Visit log'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-visit-log-view">
+<div class="user-visit-log-view" style="margin:30px 10px;">
 
 
-	<div class="panel panel-default">
-		<div class="panel-body">
+	<div class="card" style="border:1px solid #acb5bd">
+		<div class="card-body">
 
 			<?= DetailView::widget([
 				'model' => $model,

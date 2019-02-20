@@ -3,14 +3,12 @@
 use webvimark\modules\UserManagement\components\GhostHtml;
 use webvimark\modules\UserManagement\models\rbacDB\Role;
 use webvimark\modules\UserManagement\models\User;
-use webvimark\modules\UserManagement\UserManagementModule;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
 use webvimark\extensions\GridBulkActions\GridBulkActions;
 use webvimark\extensions\GridPageSize\GridPageSize;
-use yii\grid\GridView;
 
 /**
  * @var yii\web\View $this
@@ -20,6 +18,8 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('microsept', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="user-index" style="margin:30px 10px;">
 
@@ -101,21 +101,12 @@ $this->params['breadcrumbs'][] = $this->title;
 						'attribute'=>'email',
 						'format'=>'raw',
 						'visible'=>User::hasPermission('viewUserEmail'),
-					],
-					[
-						'class'=>'webvimark\components\StatusColumn',
-						'attribute'=>'email_confirmed',
-                        'format' => 'raw',
-                        //'hAlign' => 'center',
-                        'value' => function($model){
-                            if($model->email_confirmed){
-                                return '<span class="badge badge-success" style="padding:5px 10px;"> Oui </span>';
-                            }
-                            else{
-                                return '<span class="badge badge-warning" style="padding:5px 10px;">Non</span>';
-                            }
-                        },
-						'visible'=>User::hasPermission('viewUserEmail'),
+                        'value'=>function($model){
+			                if(!is_null($model->email))
+			                    return $model->email;
+			                else
+			                    return '';
+                        }
 					],
 					[
 						'attribute'=>'gridRoleSearch',
@@ -125,14 +116,6 @@ $this->params['breadcrumbs'][] = $this->title;
 							},
 						'format'=>'raw',
 						'visible'=>User::hasPermission('viewUserRoles'),
-					],
-					[
-						'attribute'=>'registration_ip',
-						'value'=>function(User $model){
-								return Html::a($model->registration_ip, "http://ipinfo.io/" . $model->registration_ip, ["target"=>"_blank"]);
-							},
-						'format'=>'raw',
-						'visible'=>User::hasPermission('viewRegistrationIp'),
 					],
 					[
 						'value'=>function(User $model){
@@ -160,16 +143,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 return '<span class="badge badge-warning" style="padding:5px 10px;">Inactif</span>';
                             }
                         },
-						//'optionsArray'=>[
-						//	[User::STATUS_ACTIVE, Yii::t('microsept', 'Active'), 'success'],
-						//	[User::STATUS_INACTIVE, Yii::t('microsept', 'Inactive'), 'warning'],
-						//],
 					],
 					['class' => 'yii\grid\CheckboxColumn', 'options'=>['style'=>'width:10px'] ],
-//					[
-//						'class' => 'yii\grid\ActionColumn',
-//						'contentOptions'=>['style'=>'width:70px; text-align:center;'],
-//					],
 					['class' => '\kartik\grid\ActionColumn',
 						'template' => '{view} {update} {delete}',
 						'noWrap' => true,
@@ -181,14 +156,14 @@ $this->params['breadcrumbs'][] = $this->title;
 									return '';
 								}
 								else {
-									return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, [
+									return Html::a('<span class="fa fa-pencil-alt"></span>', $url, [
 										'title' => Yii::t('app','Update'),
 										'data-method' => 'post',
 									]);
 								}
 							},
 							'delete' => function ($url, $model) {
-                                return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
+                                return Html::a('<span class="fa fa-trash-alt"></span>', $url, [
                                     'title' => Yii::t('app','Delete'),
                                     'data-method' => 'post',
                                     'data-confirm' => Yii::t('app', 'Delete user')

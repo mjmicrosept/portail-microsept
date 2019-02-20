@@ -3,11 +3,29 @@
  * @var yii\widgets\ActiveForm $form
  * @var webvimark\modules\UserManagement\models\rbacDB\Role $model
  */
-use webvimark\modules\UserManagement\models\rbacDB\AuthItemGroup;
-use webvimark\modules\UserManagement\UserManagementModule;
 use yii\bootstrap\ActiveForm;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use kartik\builder\FormAsset;
+use app\assets\views\KartikCommonAsset;
+
+FormAsset::register($this);
+KartikCommonAsset::register($this);
+
+$this->registerCss(<<<CSS
+    .form-group{
+        display:flex;
+    }
+    .control-label{
+        padding-top: 7px;
+        margin-bottom: 0;
+        text-align: right;
+    }
+    .col-sm-offset-3 {
+        margin-left: 25%;
+    }
+CSS
+);
+
 ?>
 
 <?php $form = ActiveForm::begin([
@@ -25,12 +43,12 @@ use yii\helpers\Html;
 		<div class="col-sm-offset-3 col-sm-9">
 			<?php if ( $model->isNewRecord ): ?>
 				<?= Html::submitButton(
-					'<span class="glyphicon glyphicon-plus-sign"></span> ' . Yii::t('microsept', 'Create'),
+					'<span class="fas fa-plus-circle"></span> ' . Yii::t('microsept', 'Create'),
 					['class' => 'btn btn-success']
 				) ?>
 			<?php else: ?>
 				<?= Html::submitButton(
-					'<span class="glyphicon glyphicon-ok"></span> ' . Yii::t('microsept', 'Save'),
+					'<span class="fas fa-check"></span> ' . Yii::t('microsept', 'Save'),
 					['class' => 'btn btn-primary']
 				) ?>
 			<?php endif; ?>

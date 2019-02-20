@@ -630,11 +630,12 @@ $this->title = 'Portail Microsept';
         </div>
     </aside>
 </div>
-<footer class="app-footer">
-    &copy; <?= date('Y') ?> <?= Html::a(Yii::$app->name, ['/']) ?>
 
-    <span class="float-right">Made by coco l'asticot
-        .</span>
+<footer class="app-footer" style="display:inline-table;padding:15px;">
+    <div class="hidden-xs" style="float:right !important;">
+        Version <?= Yii::$app->version ?>
+    </div>
+    Copyright &copy; <?= date('Y') ?>&nbsp; <a href="https://www.laboratoire-microsept.fr///"> Microsept</a>. Tous droits réservés.
 </footer>
 <?php $this->endBody() ?>
 </body>

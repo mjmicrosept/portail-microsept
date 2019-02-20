@@ -1,14 +1,10 @@
 <?php
 
 use webvimark\modules\UserManagement\components\GhostHtml;
-use webvimark\modules\UserManagement\UserManagementModule;
+use webvimark\modules\UserManagement\models\rbacDB\AuthItemGroup;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
-use webvimark\extensions\GridBulkActions\GridBulkActions;
 use webvimark\extensions\GridPageSize\GridPageSize;
-use yii\grid\GridView;
 
 /**
  * @var yii\web\View $this
@@ -19,18 +15,18 @@ use yii\grid\GridView;
 $this->title = Yii::t('microsept', 'Permission groups');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="auth-item-group-index">
+<div class="auth-item-group-index" style="margin:30px 10px;">
 
 	<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-	<div class="panel panel-primary">
-        <div class="panel-heading">
+	<div class="card" style="border:1px solid #acb5bd">
+        <div class="card-header bg-secondary" style="border-bottom:1px solid #acb5bd">
             <div class="row">
                 <div class="col-sm-6">
                     <h4><?= $this->title ?></h4>
                 </div>
                 <div class="col-sm-6">
-                    <div class="form-inline pull-right">
+                    <div class="form-inline pull-right" style="float:right;">
                         <?= GridPageSize::widget([
                             'pjaxId'=>'auth-item-group-grid-pjax',
                             'viewFile' => '@app/views/widgets/grid-page-size/index.php',
@@ -47,12 +43,12 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
 
-		<div class="panel-body">
+		<div class="card-body">
 			<?php Pjax::begin([
 				'id'=>'auth-item-group-grid-pjax',
 			]) ?>
 
-			<?= GridView::widget([
+			<?= \kartik\grid\GridView::widget([
 				'id'=>'auth-item-group-grid',
 				'dataProvider' => $dataProvider,
 				'pager'=>[
@@ -77,10 +73,27 @@ $this->params['breadcrumbs'][] = $this->title;
 					'code',
 
 					['class' => 'yii\grid\CheckboxColumn', 'options'=>['style'=>'width:10px'] ],
-					[
-						'class' => 'yii\grid\ActionColumn',
-						'contentOptions'=>['style'=>'width:70px; text-align:center;'],
-					],
+                    ['class' => '\kartik\grid\ActionColumn',
+                        'template' => '{view} {update} {delete}',
+                        'noWrap' => true,
+                        'vAlign'=>'middle',
+                        'buttons' => [
+                            //update button
+                            'update' => function ($url,AuthItemGroup $model) {
+                                return Html::a('<span class="fa fa-pencil-alt"></span>', $url, [
+                                    'title' => Yii::t('app','Update'),
+                                    'data-method' => 'post',
+                                ]);
+                            },
+                            'delete' => function ($url, $model) {
+                                return Html::a('<span class="fa fa-trash-alt"></span>', $url, [
+                                    'title' => Yii::t('app','Delete'),
+                                    'data-method' => 'post',
+                                    'data-confirm' => Yii::t('app', 'Delete user')
+                                ]);
+                            }
+                        ],
+                    ],
 				],
 			]); ?>
 		

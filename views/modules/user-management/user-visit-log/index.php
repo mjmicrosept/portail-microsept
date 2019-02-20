@@ -1,7 +1,6 @@
 <?php
 
 use webvimark\extensions\DateRangePicker\DateRangePicker;
-use webvimark\modules\UserManagement\UserManagementModule;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use webvimark\extensions\GridPageSize\GridPageSize;
@@ -16,13 +15,13 @@ use yii\grid\GridView;
 $this->title = Yii::t('microsept', 'Visit log');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-visit-log-index">
+<div class="user-visit-log-index" style="margin:30px 10px;">
 
 	<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-	<div class="panel panel-default">
+	<div class="card" style="border:1px solid #acb5bd">
 
-		<div class="panel-body">
+		<div class="card-body">
 
 			<div class="row">
 				<div class="col-sm-12 text-right">
@@ -34,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'id'=>'user-visit-log-grid-pjax',
 			]) ?>
 
-			<?= GridView::widget([
+			<?= \kartik\grid\GridView::widget([
 				'id'=>'user-visit-log-grid',
 				'dataProvider' => $dataProvider,
 				'pager'=>[
@@ -79,11 +78,11 @@ $this->params['breadcrumbs'][] = $this->title;
 						},
 						'label'=>Yii::t('microsept','visit_time'),
 					],
-					[
-						'class' => 'yii\grid\ActionColumn',
-						'template'=>'{view}',
-						'contentOptions'=>['style'=>'width:70px; text-align:center;'],
-					],
+                    ['class' => '\kartik\grid\ActionColumn',
+                        'template' => '{view}',
+                        'noWrap' => true,
+                        'vAlign'=>'middle',
+                    ],
 				],
 			]); ?>
 		

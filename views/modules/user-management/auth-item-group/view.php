@@ -1,6 +1,5 @@
 <?php
 
-use webvimark\modules\UserManagement\UserManagementModule;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -13,18 +12,20 @@ $this->title = Yii::t('microsept','Permission group'). ' : ' .$model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('microsept', 'Permission groups'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="auth-item-group-view">
+<div class="auth-item-group-view" style="margin:30px 10px;">
 
-	<h2 class="lte-hide-title"><?= $this->title ?></h2>
-
-	<div class="panel panel-default">
-		<div class="panel-body">
+	<div class="card" style="border:1px solid #acb5bd">
+        <div class="card-header bg-secondary" style="border-bottom:1px solid #acb5bd">
+            <h4><?= $this->title ?></h4>
+        </div>
+		<div class="card-body">
 
 			<p>
 				<?= Html::a(Yii::t('microsept', 'Edit'), ['update', 'id' => $model->code], ['class' => 'btn btn-sm btn-primary']) ?>
 				<?= Html::a(Yii::t('microsept', 'Create'), ['create'], ['class' => 'btn btn-sm btn-success']) ?>
 				<?= Html::a(Yii::t('yii', 'Delete'), ['delete', 'id' => $model->code], [
 					'class' => 'btn btn-sm btn-danger pull-right',
+                    'style'=>'float:right;',
 					'data' => [
 						'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
 						'method' => 'post',

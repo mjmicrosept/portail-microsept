@@ -6,21 +6,21 @@
  * @var webvimark\modules\UserManagement\models\rbacDB\Permission $model
  */
 
-use webvimark\modules\UserManagement\UserManagementModule;
 
 $this->title = Yii::t('microsept', 'Permission creation');
-$this->params['breadcrumbs'][] = ['label' => UserManagementModule::t('microsept', 'Permissions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('microsept', 'Permissions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="permission-create" style="margin:30px 10px;">
+    <div class="card" style="border:1px solid #acb5bd">
+        <div class="card-header bg-secondary" style="border-bottom:1px solid #acb5bd">
+            <h4><?= $this->title ?></h4>
+        </div>
 
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h4><?= $this->title ?></h4>
-	</div>
-	
-	<div class="panel-body">
-		<?= $this->render('_form', [
-			'model'=>$model,
-		]) ?>
-	</div>
+        <div class="card-body">
+            <?= $this->render('_form', [
+                'model'=>$model,
+            ]) ?>
+        </div>
+    </div>
 </div>

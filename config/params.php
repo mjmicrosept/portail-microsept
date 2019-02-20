@@ -6,12 +6,12 @@ return [
 
     //ASSIGNMENTS
     'roleSuperAdmin' => 'super_admin',
-    'rolePortailAdmin'=>'portail_admin',
-    'roleLaboAdmin'=>'labo_admin',
-    'roleLaboUser'=>'labo_user',
-    'roleClientAdmin'=>'client_admin',
-    'roleClientUserGroup'=>'client_user_group',
-    'roleClientUser'=>'client_user',
+    'roleRespCommercial'=>'resp_commercial',
+    'roleCommercial'=>'commercial',
+    'roleAdv'=>'adv',
+    'roleRespFormation'=>'resp_formation',
+    'roleFormation'=>'formation',
+    'rolePrelevement'=>'prelevement',
 
     //PATH DOSSIERS CLIENTS
     'dossierAdmin'=>dirname(__DIR__) .'/web/dossiers_clients/admin/',

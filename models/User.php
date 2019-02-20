@@ -29,29 +29,30 @@ class User extends \webvimark\modules\UserManagement\models\User
 {
 
     const LEVEL_SUPERADMIN = 1;
-    const LEVEL_PORTAIL_ADMIN = 2;
-    const LEVEL_LABO_ADMIN = 3;
-    const LEVEL_LABO_USER = 4;
-    const LEVEL_CLIENT_ADMIN = 5;
-    const LEVEL_CLIENT_USER = 6;
-    const LEVEL_CLIENT_USER_GROUP = 7;
+    const LEVEL_RESP_COMMERCIAL = 2;
+    const LEVEL_COMMERCIAL = 3;
+    const LEVEL_ADV = 4;
+    const LEVEL_RESP_FORMATION = 5;
+    const LEVEL_FORMATION = 6;
+    const LEVEL_PRELEVEMENT  = 7;
 
     const TYPE_SUPERADMIN = 'superadmin';
-    const TYPE_PORTAIL_ADMIN = 'portail_admin';
-    const TYPE_LABO_ADMIN = 'labo_admin';
-    const TYPE_LABO_USER = 'labo_user';
-    const TYPE_CLIENT_ADMIN = 'client_admin';
-    const TYPE_CLIENT_USER = 'client_user';
-    const TYPE_CLIENT_USER_GROUP = 'client_user_group';
+    const TYPE_RESP_COMMERCIAL = 'resp_commercial';
+    const TYPE_COMMERCIAL = 'commercial';
+    const TYPE_ADV = 'adv';
+    const TYPE_RESP_FORMATION = 'resp_formation';
+    const TYPE_FORMATION = 'formation';
+    const TYPE_PRELEVEMENT = 'prelevement';
+
 
     public static $aAssignmentType = [
         self::TYPE_SUPERADMIN => self::LEVEL_SUPERADMIN,
-        self::TYPE_PORTAIL_ADMIN  => self::LEVEL_PORTAIL_ADMIN,
-        self::TYPE_LABO_ADMIN  => self::LEVEL_LABO_ADMIN,
-        self::TYPE_LABO_USER => self::LEVEL_LABO_USER,
-        self::TYPE_CLIENT_ADMIN => self::LEVEL_CLIENT_ADMIN,
-        self::TYPE_CLIENT_USER => self::LEVEL_CLIENT_USER,
-        self::TYPE_CLIENT_USER_GROUP => self::LEVEL_CLIENT_USER_GROUP
+        self::TYPE_RESP_COMMERCIAL  => self::LEVEL_RESP_COMMERCIAL,
+        self::TYPE_COMMERCIAL  => self::LEVEL_COMMERCIAL,
+        self::TYPE_ADV => self::LEVEL_ADV,
+        self::TYPE_RESP_FORMATION => self::LEVEL_RESP_FORMATION,
+        self::TYPE_FORMATION => self::LEVEL_FORMATION,
+        self::TYPE_PRELEVEMENT => self::LEVEL_PRELEVEMENT
     ];
 
 
@@ -67,16 +68,6 @@ class User extends \webvimark\modules\UserManagement\models\User
             return null;
     }
 
-    /**
-     * @return array|null|\yii\db\ActiveRecord
-     */
-    public function getLabo(){
-        $portailUser = PortailUsers::find()->andFilterWhere(['id_user'=>$this->id])->one();
-        if(!is_null($portailUser))
-            return Labo::find()->andFilterWhere(['id'=>$portailUser->id_labo])->one();
-        else
-            return null;
-    }
 
     /**
      * @return array|null|\yii\db\ActiveRecord
@@ -86,18 +77,6 @@ class User extends \webvimark\modules\UserManagement\models\User
         return PortailUsers::find()->andFilterWhere(['id_user'=>$this->id])->one();
     }
 
-
-
-
-    /**
-     * @return Client
-     */
-    public function getLastClient() {
-        if(!is_null($this->client))
-            return $this->client[0];
-        else
-            return null;
-    }
 
     /**
      * Get assignments for user
@@ -183,8 +162,8 @@ class User extends \webvimark\modules\UserManagement\models\User
      * @param int $userId
      * @return bool
      */
-    public static function isPortailAdmin($userId){
-        return self::isRole($userId,'rolePortailAdmin');
+    public static function isRespCommercial($userId){
+        return self::isRole($userId,'roleRespCommercial');
     }
     /**
      * Determines whether the user is a labo admin
@@ -192,8 +171,8 @@ class User extends \webvimark\modules\UserManagement\models\User
      * @param int $userId
      * @return bool
      */
-    public static function isLaboAdmin($userId){
-        return self::isRole($userId,'roleLaboAdmin');
+    public static function isCommercial($userId){
+        return self::isRole($userId,'roleCommercial');
     }
     /**
      * Determines whether the user is a labo user
@@ -201,8 +180,8 @@ class User extends \webvimark\modules\UserManagement\models\User
      * @param int $userId
      * @return bool
      */
-    public static function isLaboUser($userId){
-        return self::isRole($userId,'roleLaboUser');
+    public static function isAdv($userId){
+        return self::isRole($userId,'roleAdv');
     }
 
     /**
@@ -211,8 +190,8 @@ class User extends \webvimark\modules\UserManagement\models\User
      * @param int $userId
      * @return bool
      */
-    public static function isClientAdmin($userId){
-        return self::isRole($userId,'roleClientAdmin');
+    public static function isRespFormation($userId){
+        return self::isRole($userId,'roleRespFormation');
     }
 
     /**
@@ -221,8 +200,8 @@ class User extends \webvimark\modules\UserManagement\models\User
      * @param int $userId
      * @return bool
      */
-    public static function isClientUser($userId){
-        return self::isRole($userId,'roleClientUser');
+    public static function isFormation($userId){
+        return self::isRole($userId,'roleFormation');
     }
 
     /**
@@ -231,8 +210,8 @@ class User extends \webvimark\modules\UserManagement\models\User
      * @param int $userId
      * @return bool
      */
-    public static function isClientUserGroup($userId){
-        return self::isRole($userId,'roleClientUserGroup');
+    public static function isPrelevement($userId){
+        return self::isRole($userId,'rolePrelevement');
     }
 
     /**
@@ -277,84 +256,29 @@ class User extends \webvimark\modules\UserManagement\models\User
             if(!$this->save())
                 $error = true;
             switch($request_post['radioPermission']){
-                //Dans le cas d'un admin du portail ses droits sont complets sur tous les labos et clients
-                case User::TYPE_PORTAIL_ADMIN:
-                    if (!User::assignRole($this->id, User::TYPE_PORTAIL_ADMIN))
+                case User::TYPE_RESP_COMMERCIAL:
+                    if (!User::assignRole($this->id, User::TYPE_RESP_COMMERCIAL))
                         $error = true;
                     break;
-                //Dans le cas d'un Admin de labo il faut lui affecter les droits admin sur SON labo
-                case User::TYPE_LABO_ADMIN:
-                    if (!User::assignRole($this->id, User::TYPE_LABO_ADMIN))
+                case User::TYPE_COMMERCIAL:
+                    if (!User::assignRole($this->id, User::TYPE_COMMERCIAL))
                         $error = true;
-                    else
-                    {
-                        if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN])) {
-                            PortailUsers::createNewEntry($this->id, intval($request_post['paramLabo']), null);
-                        }
-                        else {
-                            //On récupère le labo de la personne connectée
-                            $idLabo = PortailUsers::getIdLaboUser(User::getCurrentUser()->id);
-                            PortailUsers::createNewEntry($this->id, $idLabo, null);
-                        }
-                    }
                     break;
-                //Dans le cas d'un user de labo il faut lui affecter les droits client sur SON labo
-                case User::TYPE_LABO_USER:
-                    if (!User::assignRole($this->id, User::TYPE_LABO_USER))
+                case User::TYPE_ADV:
+                    if (!User::assignRole($this->id, User::TYPE_ADV))
                         $error = true;
-                    else
-                    {
-                        if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                            PortailUsers::createNewEntry($this->id,intval($request_post['paramLabo']),null);
-                        else {
-                            //On récupère le labo de la personne connectée
-                            $idLabo = PortailUsers::getIdLaboUser(User::getCurrentUser()->id);
-                            PortailUsers::createNewEntry($this->id, $idLabo, null);
-                        }
-                    }
                     break;
-                //Dans le cas d'un Admin de client il faut lui affecter les droits admin sur SON client
-                case User::TYPE_CLIENT_ADMIN:
-                    if (!User::assignRole($this->id, User::TYPE_CLIENT_ADMIN))
+                case User::TYPE_RESP_FORMATION:
+                    if (!User::assignRole($this->id, User::TYPE_RESP_FORMATION))
                         $error = true;
-                    else
-                    {
-                        if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                            PortailUsers::createNewEntry($this->id,null,intval($request_post['paramClient']));
-                        else {
-                            //On récupère le labo de la personne connectée
-                            $idClient = PortailUsers::getIdClientUser(User::getCurrentUser()->id);
-                            PortailUsers::createNewEntry($this->id, null, $idClient);
-                        }
-                    }
                     break;
-                //Dans le cas d'un user de client il faut lui affecter les droits user sur SON client
-                case User::TYPE_CLIENT_USER:
-                    if (!User::assignRole($this->id, User::TYPE_CLIENT_USER))
+                case User::TYPE_FORMATION:
+                    if (!User::assignRole($this->id, User::TYPE_FORMATION))
                         $error = true;
-                    else
-                    {
-                        PortailUsers::createNewEntry($this->id,null,intval($request_post['etablissement']));
-                    }
                     break;
-                //Dans le cas d'un  user group de client il faut lui affecter les droits user sur SES clients (plutôt établissements)
-                case User::TYPE_CLIENT_USER_GROUP:
-                    if (!User::assignRole($this->id, User::TYPE_CLIENT_USER_GROUP))
+                case User::TYPE_PRELEVEMENT:
+                    if (!User::assignRole($this->id, User::TYPE_PRELEVEMENT))
                         $error = true;
-                    else
-                    {
-                        //On crée une entrée pour chaque établissement
-                        if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN])) {
-                            for($i = 0; $i < count($request_post['etablissementgroup']);$i++){
-                                PortailUsers::createNewEntry($this->id,null,intval($request_post['etablissementgroup'][$i]));
-                            }
-                        }
-                        else{
-                            for($i = 0; $i < count($request_post['kvformadmin']['etablissement']);$i++){
-                                PortailUsers::createNewEntry($this->id,null,intval($request_post['kvformadmin']['etablissement'][$i]));
-                            }
-                        }
-                    }
                     break;
             }
             if(!$error)
@@ -384,151 +308,40 @@ class User extends \webvimark\modules\UserManagement\models\User
             if(!$this->save())
                 $error = true;
             switch($request_post['radioPermission']){
-                //Dans le cas d'un admin du portail ses droits sont complets sur tous les labos et clients
-                case User::TYPE_PORTAIL_ADMIN:
+                case User::TYPE_RESP_COMMERCIAL:
                     if(User::revokeRole($this->id, $old_role)) {
-                        if (!User::assignRole($this->id, User::TYPE_PORTAIL_ADMIN))
+                        if (!User::assignRole($this->id, User::TYPE_RESP_COMMERCIAL))
                             $error = true;
-                        else {
-                            //Si avant son rôle n'était pas admin du portail il faut supprimer l'enregistrement de la table portail_users
-                            if ($old_role != User::TYPE_PORTAIL_ADMIN) {
-                                PortailUsers::deleteEntry($this->id);
-                            }
-                        }
                     }
                     break;
-                //Dans le cas d'un Admin de labo il faut lui affecter les droits admin sur SON labo
-                case User::TYPE_LABO_ADMIN:
+                case User::TYPE_COMMERCIAL:
                     if(User::revokeRole($this->id, $old_role)) {
-                        if (!User::assignRole($this->id, User::TYPE_LABO_ADMIN))
+                        if (!User::assignRole($this->id, User::TYPE_COMMERCIAL))
                             $error = true;
-                        else {
-                            //Si avant son rôle était admin du portail il faut lui créer une entrée dans la table portail_users sinon la mettre à jour
-                            if ($old_role == User::TYPE_PORTAIL_ADMIN) {
-                                PortailUsers::createNewEntry($this->id, intval($request_post['paramLabo']), null);
-                            } else {
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                                    PortailUsers::updateEntry($this->id, intval($request_post['paramLabo']), null);
-                                else {
-                                    //On récupère le labo de la personne connectée
-                                    $idLabo = PortailUsers::getIdLaboUser(User::getCurrentUser()->id);
-                                    PortailUsers::updateEntry($this->id, $idLabo, null);
-                                }
-                            }
-                        }
                     }
                     break;
-                //Dans le cas d'un user de labo il faut lui affecter les droits client sur SON labo
-                case User::TYPE_LABO_USER:
+                case User::TYPE_ADV:
                     if(User::revokeRole($this->id, $old_role)) {
-                        if (!User::assignRole($this->id, User::TYPE_LABO_USER))
+                        if (!User::assignRole($this->id, User::TYPE_ADV))
                             $error = true;
-                        else {
-                            //Si avant son rôle était admin du portail il faut lui créer une entrée dans la table portail_users sinon la mettre à jour
-                            if ($old_role == User::TYPE_PORTAIL_ADMIN) {
-                                PortailUsers::createNewEntry($this->id, intval($request_post['paramLabo']), null);
-                            } else {
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                                    PortailUsers::updateEntry($this->id, intval($request_post['paramLabo']), null);
-                                else {
-                                    //On récupère le labo de la personne connectée
-                                    $idLabo = PortailUsers::getIdLaboUser(User::getCurrentUser()->id);
-                                    PortailUsers::updateEntry($this->id, $idLabo, null);
-                                }
-                            }
-                        }
                     }
                     break;
-                //Dans le cas d'un Admin de client il faut lui affecter les droits admin sur SON client
-                case User::TYPE_CLIENT_ADMIN:
+                case User::TYPE_RESP_FORMATION:
                     if(User::revokeRole($this->id, $old_role)) {
-                        if (!User::assignRole($this->id, User::TYPE_CLIENT_ADMIN))
+                        if (!User::assignRole($this->id, User::TYPE_RESP_FORMATION))
                             $error = true;
-                        else {
-                            //Si avant son rôle était admin du portail il faut lui créer une entrée dans la table portail_users sinon la mettre à jour
-                            if ($old_role == User::TYPE_PORTAIL_ADMIN) {
-                                PortailUsers::createNewEntry($this->id, null, intval($request_post['paramClient']));
-                            } else {
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                                    PortailUsers::updateEntry($this->id, null, intval($request_post['paramClient']));
-                                else {
-                                    //On récupère le labo de la personne connectée
-                                    $idClient = PortailUsers::getIdClientUser(User::getCurrentUser()->id);
-                                    PortailUsers::updateEntry($this->id, null, $idClient);
-                                }
-
-                            }
-                        }
                     }
                     break;
-                //Dans le cas d'un user de client il faut lui affecter les droits user sur SON client
-                case User::TYPE_CLIENT_USER:
+                case User::TYPE_FORMATION:
                     if(User::revokeRole($this->id, $old_role)) {
-                        if (!User::assignRole($this->id, User::TYPE_CLIENT_USER))
+                        if (!User::assignRole($this->id, User::TYPE_FORMATION))
                             $error = true;
-                        else {
-                            //Si avant son rôle était admin du portail il faut lui créer une entrée dans la table portail_users sinon la mettre à jour
-                            if ($old_role == User::TYPE_PORTAIL_ADMIN) {
-                                PortailUsers::createNewEntry($this->id, null, intval($request_post['etablissement']));
-                            } else {
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                                    PortailUsers::updateEntry($this->id, null, intval($request_post['etablissement']));
-                                else {
-                                    PortailUsers::updateEntry($this->id, null, intval($request_post['etablissement']));
-                                }
-                            }
-                        }
                     }
                     break;
-                //Dans le cas d'un user de client il faut lui affecter les droits user sur SON client
-                case User::TYPE_CLIENT_USER_GROUP:
+                case User::TYPE_PRELEVEMENT:
                     if(User::revokeRole($this->id, $old_role)) {
-                        if (!User::assignRole($this->id, User::TYPE_CLIENT_USER_GROUP))
+                        if (!User::assignRole($this->id, User::TYPE_PRELEVEMENT))
                             $error = true;
-                        else {
-                            //Si avant son rôle était admin du portail il faut lui créer une entrée dans la table portail_users sinon la mettre à jour
-                            /*if ($old_role == User::TYPE_PORTAIL_ADMIN) {
-                                PortailUsers::createNewEntry($this->id, null, intval($request_post['etablissement']));
-                            } else {
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN]))
-                                    PortailUsers::updateEntry($this->id, null, intval($request_post['etablissement']));
-                                else {
-                                    PortailUsers::updateEntry($this->id, null, intval($request_post['etablissement']));
-                                }
-                            }*/
-                            if ($old_role == User::TYPE_PORTAIL_ADMIN) {
-                                //On crée une entrée pour chaque établissement
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN])) {
-                                    for($i = 0; $i < count($request_post['etablissementgroup']);$i++){
-                                        PortailUsers::createNewEntry($this->id,null,intval($request_post['etablissementgroup'][$i]));
-                                    }
-                                }
-                                else{
-                                    for($i = 0; $i < count($request_post['kvformadmin']['etablissement']);$i++){
-                                        PortailUsers::createNewEntry($this->id,null,intval($request_post['kvformadmin']['etablissement'][$i]));
-                                    }
-                                }
-                            }
-                            else{
-                                //On supprime toutes les entrée de la table pour cet utilisateur
-                                $listEntry = PortailUsers::find()->andFilterWhere(['id_user'=>$this->id])->all();
-                                foreach ($listEntry as $item) {
-                                    $item->delete();
-                                }
-
-                                //On crée une entrée pour chaque établissement
-                                if(Yii::$app->user->isSuperadmin || User::getCurrentUser()->hasRole([User::TYPE_PORTAIL_ADMIN])) {
-                                    for($i = 0; $i < count($request_post['etablissementgroup']);$i++){
-                                        PortailUsers::createNewEntry($this->id,null,intval($request_post['etablissementgroup'][$i]));
-                                    }
-                                }
-                                else{
-                                    for($i = 0; $i < count($request_post['kvformadmin']['etablissement']);$i++){
-                                        PortailUsers::createNewEntry($this->id,null,intval($request_post['kvformadmin']['etablissement'][$i]));
-                                    }
-                                }
-                            }
-                        }
                     }
                     break;
             }
@@ -557,7 +370,7 @@ class User extends \webvimark\modules\UserManagement\models\User
             if(!$this->delete())
                 $error = true;
 
-            PortailUsers::deleteEntry($id);
+            //PortailUsers::deleteEntry($id);
 
             if(!$error)
                 $transaction->commit();
