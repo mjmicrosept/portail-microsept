@@ -200,5 +200,6 @@ return [
     "LiaisonCreateError"=>"Une erreur s'est produite, veuillez contacter l'administrateur",
     "Upload_Doc_Data"=>"Envoi des données d'analyses",
     "Historique"=>"Historique",
-    "Home_Link" => "Accueil"
+    "Home_Link" => "Accueil",
+    "Echeances" => "Echéances"
 ];

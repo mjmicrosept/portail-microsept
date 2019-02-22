@@ -71,6 +71,8 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        //'db_gescom' => require(__DIR__ . '/db/db_access.php'),
+        //'db_gescom_odbc' => require(__DIR__ . '/db/db_access_odbc.php'),
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

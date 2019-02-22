@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "bower-asset/bootstrap",
-            "version": "v3.3.7",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
+                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
-                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/68b0d231a13201eb14acd3dc84e51543d16e5f7e",
+                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e",
                 "shasum": ""
             },
             "require": {
@@ -54,23 +54,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2016-07-25T15:51:55+00:00"
-        },
-        {
-            "name": "bower-asset/bootstrap4",
-            "version": "v4.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "3b558734382ce58b51e5fc676453bfd53bba9201"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/3b558734382ce58b51e5fc676453bfd53bba9201",
-                "reference": "3b558734382ce58b51e5fc676453bfd53bba9201",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
+            "time": "2019-02-13T15:55:38+00:00"
         },
         {
             "name": "bower-asset/chartjs",
@@ -106,16 +90,16 @@
         },
         {
             "name": "bower-asset/fancytree",
-            "version": "v2.30.1",
+            "version": "v2.30.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mar10/fancytree.git",
-                "reference": "d3db828cf19ba294601a3d6f79aa07f9832450a1"
+                "reference": "fb9bc2441653a0686f319f1d206444fc997cbe62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mar10/fancytree/zipball/d3db828cf19ba294601a3d6f79aa07f9832450a1",
-                "reference": "d3db828cf19ba294601a3d6f79aa07f9832450a1",
+                "url": "https://api.github.com/repos/mar10/fancytree/zipball/fb9bc2441653a0686f319f1d206444fc997cbe62",
+                "reference": "fb9bc2441653a0686f319f1d206444fc997cbe62",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +141,7 @@
                 "tree",
                 "treegrid"
             ],
-            "time": "2018-11-13T18:58:29+00:00"
+            "time": "2019-01-13T08:17:12+00:00"
         },
         {
             "name": "bower-asset/inputmask",
@@ -250,16 +234,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "3.2.1",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e"
+                "reference": "9e8ec3d10fad04748176144f108d7355662ae75e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
-                "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/9e8ec3d10fad04748176144f108d7355662ae75e",
+                "reference": "9e8ec3d10fad04748176144f108d7355662ae75e",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -278,7 +262,7 @@
                 "jquery",
                 "library"
             ],
-            "time": "2017-03-20T19:02:00+00:00"
+            "time": "2018-01-20T17:26:57+00:00"
         },
         {
             "name": "bower-asset/jquery-ui",
@@ -420,16 +404,16 @@
         },
         {
             "name": "cebe/markdown",
-            "version": "1.1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/markdown.git",
-                "reference": "25b28bae8a6f185b5030673af77b32e1163d5c6e"
+                "reference": "9bac5e971dd391e2802dca5400bbeacbaea9eb86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/25b28bae8a6f185b5030673af77b32e1163d5c6e",
-                "reference": "25b28bae8a6f185b5030673af77b32e1163d5c6e",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/9bac5e971dd391e2802dca5400bbeacbaea9eb86",
+                "reference": "9bac5e971dd391e2802dca5400bbeacbaea9eb86",
                 "shasum": ""
             },
             "require": {
@@ -447,7 +431,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -476,7 +460,7 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2017-07-16T21:13:23+00:00"
+            "time": "2018-03-26T11:24:36+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -708,22 +692,22 @@
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
-            "version": "v4.5.1",
+            "version": "v4.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "7fbc8473783febfd123178dd00c9f5ee1bf73531"
+                "reference": "80ea0aae52406911519c602978e4e51150c7bab7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/7fbc8473783febfd123178dd00c9f5ee1bf73531",
-                "reference": "7fbc8473783febfd123178dd00c9f5ee1bf73531",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/80ea0aae52406911519c602978e4e51150c7bab7",
+                "reference": "80ea0aae52406911519c602978e4e51150c7bab7",
                 "shasum": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.4.x-dev"
+                    "dev-master": "4.5.x-dev"
                 }
             },
             "autoload": {
@@ -757,7 +741,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2018-09-25T15:16:57+00:00"
+            "time": "2019-01-03T02:58:32+00:00"
         },
         {
             "name": "kartik-v/bootstrap-popover-x",
@@ -957,12 +941,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-builder.git",
-                "reference": "e3cebbf2a46ae01f8ce56250416a426121003b76"
+                "reference": "a293f2b0b4c2dad528a1383fe41c0de4d0b4f72e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-builder/zipball/e3cebbf2a46ae01f8ce56250416a426121003b76",
-                "reference": "e3cebbf2a46ae01f8ce56250416a426121003b76",
+                "url": "https://api.github.com/repos/kartik-v/yii2-builder/zipball/a293f2b0b4c2dad528a1383fe41c0de4d0b4f72e",
+                "reference": "a293f2b0b4c2dad528a1383fe41c0de4d0b4f72e",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +985,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2018-11-26T05:35:41+00:00"
+            "time": "2019-01-22T17:43:15+00:00"
         },
         {
             "name": "kartik-v/yii2-date-range",
@@ -1263,16 +1247,16 @@
         },
         {
             "name": "kartik-v/yii2-grid",
-            "version": "v3.2.8",
+            "version": "v3.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "31ccd84cdd3dcb793bde509bcade8b75bfd94c35"
+                "reference": "3735c999eda391961220845063f8b373f409f488"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/31ccd84cdd3dcb793bde509bcade8b75bfd94c35",
-                "reference": "31ccd84cdd3dcb793bde509bcade8b75bfd94c35",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/3735c999eda391961220845063f8b373f409f488",
+                "reference": "3735c999eda391961220845063f8b373f409f488",
                 "shasum": ""
             },
             "require": {
@@ -1311,7 +1295,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2018-11-09T15:48:59+00:00"
+            "time": "2018-12-07T12:28:30+00:00"
         },
         {
             "name": "kartik-v/yii2-helpers",
@@ -2127,16 +2111,16 @@
         },
         {
             "name": "mpdf/mpdf",
-            "version": "v7.1.7",
+            "version": "v7.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpdf/mpdf.git",
-                "reference": "ac60286a7dc5250c293afebd2bd9414e58a02466"
+                "reference": "a0fc1215d2306aa3b4ba6e97bd6ebe4bab6a88fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/ac60286a7dc5250c293afebd2bd9414e58a02466",
-                "reference": "ac60286a7dc5250c293afebd2bd9414e58a02466",
+                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/a0fc1215d2306aa3b4ba6e97bd6ebe4bab6a88fb",
+                "reference": "a0fc1215d2306aa3b4ba6e97bd6ebe4bab6a88fb",
                 "shasum": ""
             },
             "require": {
@@ -2191,29 +2175,32 @@
                 "php",
                 "utf-8"
             ],
-            "time": "2018-11-29T18:21:32+00:00"
+            "time": "2019-02-06T13:32:19+00:00"
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.7.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
+                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
-                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
+                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0"
+                "php": "^7.1"
+            },
+            "replace": {
+                "myclabs/deep-copy": "self.version"
             },
             "require-dev": {
                 "doctrine/collections": "^1.0",
                 "doctrine/common": "^2.6",
-                "phpunit/phpunit": "^4.1"
+                "phpunit/phpunit": "^7.1"
             },
             "type": "library",
             "autoload": {
@@ -2236,37 +2223,150 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-10-19T19:58:43+00:00"
+            "time": "2018-06-11T23:09:50+00:00"
+        },
+        {
+            "name": "npm-asset/bootstrap",
+            "version": "4.3.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.3.1.tgz",
+                "reference": null,
+                "shasum": "280ca8f610504d99d7b6b4bfc4b68cec601704ac"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/twbs/bootstrap/issues"
+                },
+                "npm-asset-main": "dist/js/bootstrap",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/twbs/bootstrap.git"
+                },
+                "npm-asset-scripts": {
+                    "start": "npm-run-all --parallel watch docs-serve",
+                    "blc": "blc --exclude-external --filter-level 3 --follow --get --ordered --recursive --host-requests 4 --input http://localhost:3000/",
+                    "http-server": "http-server --silent -p 3000",
+                    "bundlesize": "bundlesize",
+                    "check-broken-links": "npm-run-all --parallel --race \"http-server -- _gh_pages/\" blc",
+                    "css": "npm-run-all css-compile css-prefix css-minify css-copy",
+                    "css-copy": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/css/ site/docs/$npm_package_version_short/dist/",
+                    "css-main": "npm-run-all css-lint css-compile-main css-prefix-main css-minify-main css-copy",
+                    "css-docs": "npm-run-all css-compile-docs css-prefix-docs css-minify-docs",
+                    "css-compile": "npm-run-all --parallel css-compile-*",
+                    "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css && npm run css-copy",
+                    "css-compile-docs": "cross-env-shell node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 site/docs/$npm_package_version_short/assets/scss/docs.scss site/docs/$npm_package_version_short/assets/css/docs.min.css",
+                    "css-lint": "npm-run-all --parallel css-lint-*",
+                    "css-lint-main": "stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+                    "css-lint-docs": "stylelint \"site/docs/**/assets/scss/*.scss\" \"site/docs/**/*.css\" --cache --cache-location .cache/.stylelintcache",
+                    "css-lint-vars": "fusv scss/ site/docs/",
+                    "css-minify": "npm-run-all --parallel css-minify-*",
+                    "css-minify-main": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
+                    "css-minify-docs": "cross-env-shell cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output site/docs/$npm_package_version_short/assets/css/docs.min.css site/docs/$npm_package_version_short/assets/css/docs.min.css",
+                    "css-prefix": "npm-run-all --parallel css-prefix-*",
+                    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+                    "css-prefix-docs": "postcss --config build/postcss.config.js --replace \"site/docs/**/*.css\" \"site/docs/**/*.css\"",
+                    "js": "npm-run-all js-compile js-minify js-copy",
+                    "js-copy": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/js/ site/docs/$npm_package_version_short/dist/",
+                    "js-main": "npm-run-all js-lint js-compile js-minify-main",
+                    "js-docs": "npm-run-all js-lint-docs js-minify-docs",
+                    "js-compile": "npm-run-all --parallel js-compile-* --sequential js-copy",
+                    "js-compile-standalone": "rollup --environment BUNDLE:false --config build/rollup.config.js --sourcemap",
+                    "js-compile-bundle": "rollup --environment BUNDLE:true --config build/rollup.config.js --sourcemap",
+                    "js-compile-plugins": "node build/build-plugins.js",
+                    "js-compile-plugins-coverage": "cross-env NODE_ENV=test node build/build-plugins.js",
+                    "js-lint": "npm-run-all --parallel js-lint-*",
+                    "js-lint-main": "eslint --cache --cache-location .cache/.eslintcache js/src js/tests build/",
+                    "js-lint-docs": "eslint --cache --cache-location .cache/.eslintcache site/",
+                    "js-minify": "npm-run-all --parallel js-minify-main js-minify-docs",
+                    "js-minify-main": "npm-run-all js-minify-standalone js-minify-bundle",
+                    "js-minify-standalone": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/bootstrap.js.map,includeSources,url=bootstrap.min.js.map\" --output dist/js/bootstrap.min.js dist/js/bootstrap.js",
+                    "js-minify-bundle": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/bootstrap.bundle.js.map,includeSources,url=bootstrap.bundle.min.js.map\" --output dist/js/bootstrap.bundle.min.js dist/js/bootstrap.bundle.js",
+                    "js-minify-docs": "cross-env-shell uglifyjs --mangle --comments \\\"/^!/\\\" --output site/docs/$npm_package_version_short/assets/js/docs.min.js site/docs/$npm_package_version_short/assets/js/vendor/anchor.min.js site/docs/$npm_package_version_short/assets/js/vendor/clipboard.min.js site/docs/$npm_package_version_short/assets/js/vendor/bs-custom-file-input.min.js \"site/docs/$npm_package_version_short/assets/js/src/*.js\"",
+                    "js-test": "npm-run-all js-test-karma* js-test-integration",
+                    "js-test-karma": "karma start js/tests/karma.conf.js",
+                    "js-test-karma-old": "cross-env USE_OLD_JQUERY=true npm run js-test-karma",
+                    "js-test-karma-bundle": "cross-env BUNDLE=true npm run js-test-karma",
+                    "js-test-karma-bundle-old": "cross-env BUNDLE=true USE_OLD_JQUERY=true npm run js-test-karma",
+                    "js-test-integration": "rollup --config js/tests/integration/rollup.bundle.js",
+                    "js-test-cloud": "cross-env BROWSER=true npm run js-test-karma",
+                    "lint": "npm-run-all --parallel js-lint css-lint",
+                    "coveralls": "shx cat js/coverage/lcov.info | coveralls",
+                    "docs": "npm-run-all css-docs js-docs docs-compile docs-lint",
+                    "docs-compile": "bundle exec jekyll build",
+                    "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
+                    "docs-lint": "node build/vnu-jar.js",
+                    "docs-serve": "bundle exec jekyll serve",
+                    "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
+                    "update-deps": "ncu -a -x jquery -x bundlesize && npm update && bundle update && cross-env-shell echo Manually update \\\"site/docs/$npm_package_version_short/assets/js/vendor/\\\"",
+                    "release": "npm run dist && npm run release-sri && npm run release-zip && npm run docs-production",
+                    "release-sri": "node build/generate-sri.js",
+                    "release-version": "node build/change-version.js",
+                    "release-zip": "cross-env-shell \"shx rm -rf bootstrap-$npm_package_version-dist && shx cp -r dist/ bootstrap-$npm_package_version-dist && zip -r9 bootstrap-$npm_package_version-dist.zip bootstrap-$npm_package_version-dist && shx rm -rf bootstrap-$npm_package_version-dist\"",
+                    "dist": "npm-run-all --parallel css js",
+                    "test": "npm-run-all lint dist js-test docs-compile docs-lint bundlesize",
+                    "watch": "npm-run-all --parallel watch-*",
+                    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
+                    "watch-css-docs": "nodemon --watch \"site/docs/**/assets/scss/\" --ext scss --exec \"npm run css-docs\"",
+                    "watch-js-main": "nodemon --watch js/src/ --ext js --exec \"npm run js-compile\"",
+                    "watch-js-docs": "nodemon --watch \"site/docs/**/assets/js/src/\" --ext js --exec \"npm run js-docs\""
+                },
+                "npm-asset-engines": {
+                    "node": ">=6"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "The Bootstrap Authors",
+                    "url": "https://github.com/twbs/bootstrap/graphs/contributors"
+                },
+                {
+                    "name": "Twitter, Inc."
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "https://getbootstrap.com/",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ],
+            "time": "2019-02-13T16:03:49+00:00"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.17",
+            "version": "v9.99.99",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
-                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.0"
+                "php": "^7"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
+                "phpunit/phpunit": "4.*|5.*",
+                "vimeo/psalm": "^1"
             },
             "suggest": {
                 "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
             },
             "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/random.php"
-                ]
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -2285,7 +2385,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-07-04T16:31:37+00:00"
+            "time": "2018-07-02T15:55:56+00:00"
         },
         {
             "name": "psr/log",
@@ -2336,16 +2436,16 @@
         },
         {
             "name": "rmrevin/yii2-fontawesome",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-                "reference": "0b05ae6ddaed96490a195057e11f9a3dc5952cb9"
+                "reference": "9508e6619b1145ceae99064761f266507a97e6ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/0b05ae6ddaed96490a195057e11f9a3dc5952cb9",
-                "reference": "0b05ae6ddaed96490a195057e11f9a3dc5952cb9",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/9508e6619b1145ceae99064761f266507a97e6ab",
+                "reference": "9508e6619b1145ceae99064761f266507a97e6ab",
                 "shasum": ""
             },
             "require": {
@@ -2388,7 +2488,7 @@
                 "font",
                 "yii"
             ],
-            "time": "2018-09-17T10:48:42+00:00"
+            "time": "2019-02-12T15:08:29+00:00"
         },
         {
             "name": "setasign/fpdi",
@@ -2751,24 +2851,20 @@
         },
         {
             "name": "yii2mod/yii2-ftp",
-            "version": "1.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yii2mod/yii2-ftp.git",
-                "reference": "c5986065fdfba8c86e08e1f4ebe204e03adb6a20"
+                "reference": "3bc4be07707f2e6eb9c9a42e5fc629c9604ec96f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yii2mod/yii2-ftp/zipball/c5986065fdfba8c86e08e1f4ebe204e03adb6a20",
-                "reference": "c5986065fdfba8c86e08e1f4ebe204e03adb6a20",
+                "url": "https://api.github.com/repos/yii2mod/yii2-ftp/zipball/3bc4be07707f2e6eb9c9a42e5fc629c9604ec96f",
+                "reference": "3bc4be07707f2e6eb9c9a42e5fc629c9604ec96f",
                 "shasum": ""
             },
             "require": {
-                "ext-ftp": "*",
                 "php": ">=5.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.0"
             },
             "type": "library",
             "autoload": {
@@ -2793,28 +2889,28 @@
                 "ssl-ftp",
                 "yii2"
             ],
-            "time": "2017-04-26T20:45:18+00:00"
+            "time": "2014-12-22T09:04:48+00:00"
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.15.1",
+            "version": "2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d"
+                "reference": "789de9783d41e6ca10fffc3644a43a764f79b399"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
-                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/789de9783d41e6ca10fffc3644a43a764f79b399",
+                "reference": "789de9783d41e6ca10fffc3644a43a764f79b399",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
-                "bower-asset/jquery": "3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+                "bower-asset/jquery": "3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1",
-                "cebe/markdown": "~1.0.0 | ~1.1.0",
+                "cebe/markdown": "~1.0.0 | ~1.1.0 | ~1.2.0",
                 "ext-ctype": "*",
                 "ext-mbstring": "*",
                 "ezyang/htmlpurifier": "~4.6",
@@ -2893,24 +2989,24 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-03-21T18:36:53+00:00"
+            "time": "2019-01-30T23:54:16+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "3f49c47924bb9fa5363c3fc7b073d954168cf438"
+                "reference": "4677951dda712dd99d5bf2a127eaee118dfea860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/3f49c47924bb9fa5363c3fc7b073d954168cf438",
-                "reference": "3f49c47924bb9fa5363c3fc7b073d954168cf438",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/4677951dda712dd99d5bf2a127eaee118dfea860",
+                "reference": "4677951dda712dd99d5bf2a127eaee118dfea860",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
+                "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*",
                 "yiisoft/yii2": "~2.0.6"
             },
             "type": "yii2-extension",
@@ -2953,7 +3049,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2018-02-16T10:41:52+00:00"
+            "time": "2019-01-29T21:39:45+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap4",
@@ -2961,20 +3057,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap4.git",
-                "reference": "493fada139407e15c8a798b3b072de5c2283c0fe"
+                "reference": "c7fb9f38362eedf15cc4ee87701e97d8ead3e142"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap4/zipball/493fada139407e15c8a798b3b072de5c2283c0fe",
-                "reference": "493fada139407e15c8a798b3b072de5c2283c0fe",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap4/zipball/c7fb9f38362eedf15cc4ee87701e97d8ead3e142",
+                "reference": "c7fb9f38362eedf15cc4ee87701e97d8ead3e142",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap4": "^4.1.0",
+                "npm-asset/bootstrap": "^4.2",
                 "yiisoft/yii2": "~2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "*",
+                "phpunit/phpunit": "<7",
                 "yiisoft/yii2-coding-standards": "~2.0"
             },
             "type": "yii2-extension",
@@ -3022,7 +3118,7 @@
                 "bootstrap4",
                 "yii2"
             ],
-            "time": "2018-12-07T22:31:37+00:00"
+            "time": "2019-02-20T00:23:10+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -3271,6 +3367,22 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "bower-asset/bootstrap4",
+            "version": "v4.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "8fa0d3010112dca5dd6dd501173415856001ba8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/8fa0d3010112dca5dd6dd501173415856001ba8b",
+                "reference": "8fa0d3010112dca5dd6dd501173415856001ba8b",
+                "shasum": ""
+            },
+            "type": "bower-asset-library"
+        },
         {
             "name": "bower-asset/typeahead.js",
             "version": "v0.11.1",

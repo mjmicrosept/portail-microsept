@@ -29,14 +29,10 @@ return [
 
 
     'arboClientFirstYear'=>2007,
-    //DONNEES LABORATOIRE
-    'laboratoire' => [
-        'path' => [
-            'dossierLabo'=>dirname(__DIR__) .'/web/dossiers_labos/analyseData/',
-        ],
-        'url' => [
-            'urlLabo'=>Yii::$app->request->baseUrl .'/dossiers_labos/analyseData/',
-        ]
+    //DONNEES ADV
+    'adv' => [
+        'pathEcheance' => dirname(__DIR__) .'/web/dossier_adv/Echeances/',
+        'urlEcheance' => Yii::$app->request->baseUrl .'/dossier_adv/Echeances/',
     ],
 
     //MODE DECONNECTE
