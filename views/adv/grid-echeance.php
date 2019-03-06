@@ -92,6 +92,7 @@ $this->registerCss(<<<CSS
     
     .dropdown-menu-context{
         width:250px !important;
+        display:none;
     }
 
     .dropdown-menu-context > li > a{
