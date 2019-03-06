@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea0c5837a7bc104ca39ffe037bd17788",
+    "content-hash": "0b51e9f0f98b65af9e8d543161b21196",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -689,6 +689,25 @@
                 "browser"
             ],
             "time": "2015-08-26T20:05:14+00:00"
+        },
+        {
+            "name": "intelogie/bootstrap-contexmenu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/INTELOGIE/bootstrap-contextmenu.git",
+                "reference": "120732d1832355bfc3c135bc61dfe1dfc714edc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/INTELOGIE/bootstrap-contextmenu/zipball/120732d1832355bfc3c135bc61dfe1dfc714edc9",
+                "reference": "120732d1832355bfc3c135bc61dfe1dfc714edc9",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Bootstrap context menu",
+            "time": "2016-07-19T03:07:34+00:00"
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
@@ -1559,12 +1578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-tree-manager.git",
-                "reference": "54c1c56b6d0239a5a6c647f0c0c7090de85db7fd"
+                "reference": "6984e77344e16b99dc9b6557491a9c665382df83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/54c1c56b6d0239a5a6c647f0c0c7090de85db7fd",
-                "reference": "54c1c56b6d0239a5a6c647f0c0c7090de85db7fd",
+                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/6984e77344e16b99dc9b6557491a9c665382df83",
+                "reference": "6984e77344e16b99dc9b6557491a9c665382df83",
                 "shasum": ""
             },
             "require": {
@@ -1608,20 +1627,20 @@
                 "tree",
                 "treeview"
             ],
-            "time": "2018-11-29T08:06:49+00:00"
+            "time": "2019-03-04T10:13:27+00:00"
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
-            "version": "v1.5.7",
+            "version": "v1.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-activeform.git",
-                "reference": "6bc8bc7231a5c0b1b6e5c89497088266931f9075"
+                "reference": "02baee5e06a5dfbc94b71dc8c13ca87789716b29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/6bc8bc7231a5c0b1b6e5c89497088266931f9075",
-                "reference": "6bc8bc7231a5c0b1b6e5c89497088266931f9075",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/02baee5e06a5dfbc94b71dc8c13ca87789716b29",
+                "reference": "02baee5e06a5dfbc94b71dc8c13ca87789716b29",
                 "shasum": ""
             },
             "require": {
@@ -1660,7 +1679,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2018-09-27T17:51:42+00:00"
+            "time": "2019-02-23T19:45:01+00:00"
         },
         {
             "name": "kartik-v/yii2-widget-alert",
@@ -2893,16 +2912,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.16",
+            "version": "2.0.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "789de9783d41e6ca10fffc3644a43a764f79b399"
+                "reference": "089198cced57c4b8c9545ddc56001a1bd114b2dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/789de9783d41e6ca10fffc3644a43a764f79b399",
-                "reference": "789de9783d41e6ca10fffc3644a43a764f79b399",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/089198cced57c4b8c9545ddc56001a1bd114b2dd",
+                "reference": "089198cced57c4b8c9545ddc56001a1bd114b2dd",
                 "shasum": ""
             },
             "require": {
@@ -2989,7 +3008,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2019-01-30T23:54:16+00:00"
+            "time": "2019-02-28T07:03:06+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -3057,12 +3076,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap4.git",
-                "reference": "c7fb9f38362eedf15cc4ee87701e97d8ead3e142"
+                "reference": "a4288a72e04d754d0d4fd3e9819f96690be74f14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap4/zipball/c7fb9f38362eedf15cc4ee87701e97d8ead3e142",
-                "reference": "c7fb9f38362eedf15cc4ee87701e97d8ead3e142",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap4/zipball/a4288a72e04d754d0d4fd3e9819f96690be74f14",
+                "reference": "a4288a72e04d754d0d4fd3e9819f96690be74f14",
                 "shasum": ""
             },
             "require": {
@@ -3118,7 +3137,7 @@
                 "bootstrap4",
                 "yii2"
             ],
-            "time": "2019-02-20T00:23:10+00:00"
+            "time": "2019-02-27T16:47:41+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -3367,22 +3386,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "bower-asset/bootstrap4",
-            "version": "v4.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "8fa0d3010112dca5dd6dd501173415856001ba8b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/8fa0d3010112dca5dd6dd501173415856001ba8b",
-                "reference": "8fa0d3010112dca5dd6dd501173415856001ba8b",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
         {
             "name": "bower-asset/typeahead.js",
             "version": "v0.11.1",
@@ -3696,7 +3699,8 @@
         "kartik-v/yii2-detail-view": 20,
         "zxbodya/yii2-elfinder": 20,
         "kartik-v/yii2-widget-depdrop": 20,
-        "kartik-v/yii2-bootstrap4-dropdown": 20
+        "kartik-v/yii2-bootstrap4-dropdown": 20,
+        "intelogie/bootstrap-contexmenu": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

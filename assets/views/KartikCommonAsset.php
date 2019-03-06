@@ -7,8 +7,6 @@
  */
 
 namespace app\assets\views;
-
-namespace app\assets\views;
 use yii\web\AssetBundle;
 
 

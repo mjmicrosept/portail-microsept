@@ -17,12 +17,13 @@ class m160408_074825_create_echeancier extends Migration
             'client' => $this->string(255)->notNull(),
             'num_facture' => $this->string(50)->defaultValue(NULL),
             'relance' => $this->integer(11),
-            'montant' => $this->string(25)->defaultValue(NULL),
+            'montant' => $this->decimal(7,2)->defaultValue(NULL),
             'date_facture' => $this->timestamp()->notNull()->defaultExpression('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
             'date_echeance' => $this->timestamp()->notNull()->defaultExpression('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
             'date_relance' => $this->timestamp()->defaultValue(NULL),
             'date_extraction' => $this->timestamp()->notNull()->defaultExpression('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
             'uuid' => $this->string(255)->notNull(),
+            'commentaire' => $this->text()->defaultValue(NULL),
         ]);
     }
 

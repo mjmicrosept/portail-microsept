@@ -39,6 +39,21 @@ class AppCommon
         '12' => 'Dec',
     ];
 
+    public static $aListMonthComplet = [
+        '01' => 'Janvier',
+        '02' => 'Février',
+        '03' => 'Mars',
+        '04' => 'Avril',
+        '05' => 'Mai',
+        '06' => 'Juin',
+        '07' => 'Juillet',
+        '08' => 'Août',
+        '09' => 'Septembre',
+        '10' => 'Octobre',
+        '11' => 'Novembre',
+        '12' => 'Décembre',
+    ];
+
     public static $aMonthAlert = [
         1=>1,
         2=>2,
@@ -193,15 +208,6 @@ class AppCommon
                     $result .= $file;
                     $result .= '</label>';
                     $result .= '<br>';
-
-                    //V1.0
-                    /*$result .= '<label>';
-                    $result .= '<input type="checkbox" class="btn-chk-list-document" name="documentList[]" value="'.$dir.'/'.$file.'" style="margin-right:20px;">';
-                    $result .= $file;
-                    $result .= '</label>';
-                    $result .= '<a href="'.Yii::$app->params["urlClients"].$dir.'/'.$file .'" target="_blank" style="margin-left:10px;"><i class="fa fa-eye"></i></a>';
-                    $result .= '<a href="/index.php/document/download?id='.$dir.'/'.$file .'" data-method="post" style="margin-left:10px;"><i class="fa fa-save"></i></a>';
-                    $result .= '<br>';*/
                 }
                 else{
                     $idLabo = explode('_',$file)[1];

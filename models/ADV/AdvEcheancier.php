@@ -11,12 +11,13 @@ use Yii;
  * @property string $client
  * @property string $num_facture
  * @property int $relance
- * @property string $montant
+ * @property float $montant
  * @property string $date_facture
  * @property string $date_echeance
  * @property string $date_relance
  * @property string $date_extraction
  * @property string $uuid
+ * @property string $commentaire
  */
 class AdvEcheancier extends \yii\db\ActiveRecord
 {
@@ -38,7 +39,8 @@ class AdvEcheancier extends \yii\db\ActiveRecord
             [['date_facture', 'date_echeance','date_extraction','date_relance'], 'safe'],
             [['client','uuid'], 'string', 'max' => 255],
             [['num_facture'], 'string', 'max' => 50],
-            [['montant'], 'string', 'max' => 25],
+            [['montant'], 'number'],
+            [['commentaire'], 'string'],
             [['relance'], 'integer'],
         ];
     }
@@ -58,7 +60,8 @@ class AdvEcheancier extends \yii\db\ActiveRecord
             'date_echeance' => 'Date Echeance',
             'date_relance' => 'Date Relance',
             'date_extraction' => 'Date Extraction',
-            'uuid' => 'Identifiant Unique'
+            'uuid' => 'Identifiant Unique',
+            'commentaire' => 'Commentaire'
         ];
     }
 
@@ -99,7 +102,7 @@ class AdvEcheancier extends \yii\db\ActiveRecord
 
                         $echeancier->relance = $aColumns['11'];
 
-                        $echeancier->montant = $aColumns['13'];
+                        $echeancier->montant = floatval(str_replace(',','.',str_replace(' ','',$aColumns['13'])));
 
                         $year = substr($aColumns['14'], 6, 4);
                         $month = intval(substr($aColumns['14'], 3, 2));
